@@ -1,8 +1,8 @@
 # Vue
-Part of the Salmon's Components franchise! This deals exclusively in Vue components.
 
 ## Available Components
-Card 
+- Card
+- Button 
 
 ## RIUTFOHTDT 
 (Resources I Used to Figure Out How To Do This)

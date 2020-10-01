@@ -1,15 +1,15 @@
 {
-  "name": "salmons-vue-components",
+  "name": "pomelo-lib-vue",
   "version": "0.1.0",
-  "description": "Salmon's Vue Components Library",
-  "main": "./dist/salmons-vue-components.common.js",
+  "description": "Pomelo Vue Component Library",
+  "main": "./dist/pomelo-lib.common.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/chinanwu/salmons-components"
+    "url": "https://github.com/chinanwu/pomelo-lib"
   },
   "author": "Chin-An Wu",
   "license": "MIT",
-  "bugs": "github.com/chinanwu/salmons-components/issues",
+  "bugs": "github.com/chinanwu/pomelo-lib/issues",
   "keywords": [
     "Vue",
     "components"
@@ -17,7 +17,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build-lib": "vue-cli-service build --target lib --name salmons-vue-components src/main.js",
+    "build-lib": "vue-cli-service build --target lib --name pomelo-lib src/main.js",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },
@@ -42,5 +42,12 @@
     "prettier": "^1.19.1",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-alpha.4"
-  }
+  },
+  "browser": "dist/pomelo-lib.esm.js",
+  "module": "dist/pomelo-lib.esm.js",
+  "unpkg": "dist/pomelo-lib.min.js",
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
+  ]
 }
