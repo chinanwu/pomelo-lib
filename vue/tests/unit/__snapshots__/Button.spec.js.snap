@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button.vue emits click 1`] = `
+<button
+  class="Button"
+  id="test"
+/>
+`;
+
+exports[`Button.vue emits keydown 1`] = `
+<button
+  class="Button"
+  id="test"
+/>
+`;
+
+exports[`Button.vue renders Button 1`] = `
+<button
+  class="Button"
+/>
+`;
+
+exports[`Button.vue renders Button with props 1`] = `
+<button
+  ariahaspopup="dialog"
+  arialabel="Fake Button"
+  ariaroledescription="this is unnecessary but test"
+  class="Button Button--fake"
+  id="test"
+  role="link"
+/>
+`;

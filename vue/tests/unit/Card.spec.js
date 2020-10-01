@@ -7,6 +7,15 @@ describe("Card.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
   });
 
+  it("renders flipped card", () => {
+    const wrapper = shallowMount(Card, {
+      props: {
+        flipped: true
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+  });
+
   it("renders card with front and back slots", () => {
     const wrapper = mount(Card, {
       slots: {

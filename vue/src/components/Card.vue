@@ -2,7 +2,7 @@
   <div
     :id="id"
     class="Card"
-    :class="{ 'Card--flip': isFlipped }"
+    :class="[{ 'Card--flip': isFlipped }, cClass]"
     tabindex="0"
     @click="handleClick"
     @keydown="handleKeyDown"
@@ -21,6 +21,7 @@ export default {
   name: "Card",
   props: {
     id: String,
+    cClass: String,
     flipped: {
       type: Boolean,
       default: false

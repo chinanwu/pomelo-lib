@@ -61,3 +61,23 @@ exports[`Card.vue renders card 1`] = `
   </div>
 </div>
 `;
+
+exports[`Card.vue renders flipped card 1`] = `
+<div
+  class="Card Card--flip"
+  tabindex="0"
+>
+  <div
+    class="Card__front"
+  >
+    
+    
+  </div>
+  <div
+    class="Card__back"
+  >
+    
+    
+  </div>
+</div>
+`;
