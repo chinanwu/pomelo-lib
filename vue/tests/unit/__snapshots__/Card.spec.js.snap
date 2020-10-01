@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card.vue flips when clicked 1`] = `
+<div
+  class="Card"
+  id="test"
+  tabindex="0"
+>
+  <div
+    class="Card__front"
+  >
+    
+    
+  </div>
+  <div
+    class="Card__back"
+  >
+    
+    
+  </div>
+</div>
+`;
+
+exports[`Card.vue renders card 1`] = `
+<div
+  class="Card"
+  tabindex="0"
+>
+  <div
+    class="Card__front"
+  >
+    
+    
+  </div>
+  <div
+    class="Card__back"
+  >
+    
+    
+  </div>
+</div>
+`;
