@@ -20,9 +20,6 @@
 export default {
   name: "Card",
   props: {
-    cardClass: String,
-    cardFrontClass: String,
-    cardBackClass: String,
     id: String,
     flipped: {
       type: Boolean,

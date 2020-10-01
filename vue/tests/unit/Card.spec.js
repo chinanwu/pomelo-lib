@@ -1,9 +1,9 @@
-import { mount } from "@vue/test-utils";
+import { mount, shallowMount } from "@vue/test-utils";
 import Card from "@/components/Card.vue";
 
 describe("Card.vue", () => {
   it("renders card", () => {
-    const wrapper = mount(Card);
+    const wrapper = shallowMount(Card);
     expect(wrapper.element).toMatchSnapshot();
   });
 
@@ -18,7 +18,7 @@ describe("Card.vue", () => {
   });
 
   it("flips when clicked", () => {
-    const wrapper = mount(Card, {
+    const wrapper = shallowMount(Card, {
       props: {
         id: "test"
       }
@@ -26,5 +26,22 @@ describe("Card.vue", () => {
     expect(wrapper.element).toMatchSnapshot();
     wrapper.find("#test").trigger("click");
     expect(wrapper.emitted()).toHaveProperty("click");
+  });
+
+  it("flips when the enter or space button is pressed", () => {
+    const wrapper = shallowMount(Card, {
+      props: {
+        id: "test"
+      }
+    });
+    expect(wrapper.element).toMatchSnapshot();
+    wrapper.find("#test").trigger("keydown", {
+      keyCode: 13
+    });
+    wrapper.find("#test").trigger("keydown", {
+      keyCode: 32
+    });
+    expect(wrapper.emitted()).toHaveProperty("click");
+    expect(wrapper.emitted("click").length).toBe(2);
   });
 });
