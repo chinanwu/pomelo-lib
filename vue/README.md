@@ -1,5 +1,7 @@
 # Vue
 
+A library of components that I used a lot. I made this for me but it could also be for you!
+
 ## Available Components
 - Card
 - Button 
