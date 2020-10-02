@@ -32,8 +32,15 @@ export default {
 - Thanks for using Pomelo! 
 - Visit [the github issues page](https://github.com/chinanwu/pomelo-lib), and describe the bug
 
+## Things To Do:
+(For Salmon, and others who want to help)
+- Add testing coverage to README
+- Add docs for components
+- Put the demo somewhere!
+
 ## RIUTFOHTDT 
 (Resources I Used to Figure Out How To Do This)
 
 - [Create a Vue.js component library](https://itnext.io/create-a-vue-js-component-library-as-a-module-part-1-a1116e632751)
 - [Vue Jest Testing Docs](https://vue-test-utils.vuejs.org/v2/guide/event-handling.html#the-counter-component)
+- Looking at other vue component libraries! (That's what you're doing *right now*! Way to go!)
