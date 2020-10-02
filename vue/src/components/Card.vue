@@ -60,7 +60,6 @@ export default {
 .Card {
   width: 40rem;
   height: 20rem;
-  position: absolute;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
   transition: transform 0.25s ease-in-out, box-shadow 0.3s;

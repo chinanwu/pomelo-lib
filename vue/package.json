@@ -23,7 +23,7 @@
     "components"
   ],
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve ./demo/main.js",
     "build": "vue-cli-service build",
     "build-lib": "vue-cli-service build --target lib --name pomelo-lib src/main.js",
     "build-publish": "npm run build-lib && npm publish",
