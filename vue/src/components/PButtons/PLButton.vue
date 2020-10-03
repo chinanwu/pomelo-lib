@@ -1,5 +1,5 @@
 <template>
-  <PButton c-class="PLButton">
+  <PButton class="PLButton">
     <template #content>
       <slot name="content"></slot>
     </template>
@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import PButton from "@/components/Buttons/PButton";
+import PButton from "@/components/PButtons/PButton";
 
 export default {
   name: "PLButton",
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .PLButton {
   font-size: 1.6rem;
 }

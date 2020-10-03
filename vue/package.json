@@ -1,6 +1,6 @@
 {
   "name": "pomelo-lib-vue",
-  "version": "0.0.2",
+  "version": "0.0.2-beta-1",
   "private": false,
   "description": "Pomelo Vue Component Library",
   "main": "./dist/pomelo-lib.common.js",
@@ -9,13 +9,14 @@
   "unpkg": "./dist/pomelo-lib.min.js",
   "files": [
     "dist/*",
-    "src/**/*.vue"
+    "src/**/*.vue",
+    "src/**/*.less"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/chinanwu/pomelo-lib"
   },
-  "author": "Chin-An Wu",
+  "author": "Chin-An (Salmon) Wu",
   "license": "MIT",
   "bugs": "github.com/chinanwu/pomelo-lib/issues",
   "keywords": [
@@ -24,9 +25,9 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve ./demo/main.js",
-    "build": "vue-cli-service build",
+    "build-demo": "vue-cli-service build ./demo/main.js",
     "build-lib": "vue-cli-service build --target lib --name pomelo-lib src/main.js",
-    "build-publish": "npm run build-lib && npm publish",
+    "build-publish-lib": "npm run build-lib && npm publish",
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint"
   },

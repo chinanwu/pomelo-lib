@@ -1,7 +1,8 @@
-export { default as Card } from "./Card";
+export { default as PAccordion } from "./PAccordion/PAccordion";
+export { default as PCard } from "./PCard/PCard";
 
-// Buttons
-export { default as PButton } from "./Buttons/PButton";
-export { default as PLButton } from "./Buttons/PLButton";
-export { default as PMButton } from "./Buttons/PMButton";
-export { default as PSButton } from "./Buttons/PSButton";
+// PButtons
+export { default as PButton } from "./PButtons/PButton";
+export { default as PLButton } from "./PButtons/PLButton";
+export { default as PMButton } from "./PButtons/PMButton";
+export { default as PSButton } from "./PButtons/PSButton";

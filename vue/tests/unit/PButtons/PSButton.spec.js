@@ -1,10 +1,10 @@
 import { shallowMount } from "@vue/test-utils";
-import PMButton from "@/components/Buttons/PMButton";
+import PSButton from "@/components/PButtons/PSButton";
 
-describe("PMButton", () => {
+describe("PSButton", () => {
   describe("rendering", () => {
-    it("renders PMButton", () => {
-      const wrapper = shallowMount(PMButton, {
+    it("renders PSButton", () => {
+      const wrapper = shallowMount(PSButton, {
         slots: {
           content: "Test"
         }

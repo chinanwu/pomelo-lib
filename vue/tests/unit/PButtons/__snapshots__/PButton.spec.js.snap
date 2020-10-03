@@ -33,6 +33,7 @@ exports[`PButton rendering renders PButton with props 1`] = `
 <button
   ariahaspopup="dialog"
   arialabel="Fake PButton"
+  arialabelledby="buttonLabel"
   ariaroledescription="this is unnecessary but test"
   class="PButton PButton--fake"
   disabled=""

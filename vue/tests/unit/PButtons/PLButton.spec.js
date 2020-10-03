@@ -1,5 +1,6 @@
 import { shallowMount } from "@vue/test-utils";
-import PLButton from "@/components/Buttons/PLButton";
+
+import PLButton from "@/components/PButtons/PLButton";
 
 describe("PLButton", () => {
   describe("rendering", () => {

@@ -1,16 +1,16 @@
 <template>
   <div
     :id="id"
-    class="Card"
-    :class="[{ 'Card--flip': isFlipped }, cClass]"
+    class="PCard"
+    :class="{ 'PCard--flip': isFlipped }"
     tabindex="0"
     @click="handleClick"
     @keydown="handleKeyDown"
   >
-    <div class="Card__front">
+    <div class="PCard__front">
       <slot name="front"></slot>
     </div>
-    <div class="Card__back">
+    <div class="PCard__back">
       <slot name="back"></slot>
     </div>
   </div>
@@ -18,10 +18,12 @@
 
 <script>
 export default {
-  name: "Card",
+  name: "PCard",
   props: {
-    id: String,
-    cClass: String,
+    id: {
+      type: String,
+      default: null
+    },
     flipped: {
       type: Boolean,
       default: false
@@ -57,21 +59,31 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.Card {
+.PCard {
   width: 40rem;
   height: 20rem;
   transform-origin: 50% 50%;
   transform-style: preserve-3d;
   transition: transform 0.25s ease-in-out, box-shadow 0.3s;
   cursor: pointer;
+
+  &:focus {
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover {
+    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
+      0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+  }
 }
 
-.Card--flip {
+.PCard--flip {
   transform: rotateY(180deg);
 }
 
-.Card__front,
-.Card__back {
+.PCard__front,
+.PCard__back {
   display: flex;
   align-items: center;
   position: absolute;
@@ -83,7 +95,17 @@ export default {
   background-color: white;
 }
 
-.Card__back {
+.PCard__back {
   transform: rotateY(180deg);
+}
+
+@media only screen and (max-width: 500px) {
+  .PCard {
+    height: 42rem;
+    width: 26rem;
+
+    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  }
 }
 </style>

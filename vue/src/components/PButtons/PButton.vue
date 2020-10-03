@@ -1,8 +1,9 @@
 <template>
   <button
     :id="id"
-    :class="['PButton', cClass]"
+    class="PButton"
     :ariaLabel="ariaLabel"
+    :ariaLabelledby="ariaLabelledBy"
     :role="role"
     :ariaHaspopup="ariaHasPopup"
     :ariaRoledescription="ariaRoledescription"
@@ -24,11 +25,11 @@ export default {
       type: String,
       default: null
     },
-    cClass: {
+    ariaLabel: {
       type: String,
       default: null
     },
-    ariaLabel: {
+    ariaLabelledBy: {
       type: String,
       default: null
     },
@@ -36,7 +37,7 @@ export default {
       type: String,
       default: null,
       validator: function(value) {
-        return value === "link";
+        return ["tab", "link"].indexOf(value) !== -1;
       }
     },
     ariaHasPopup: {
@@ -53,7 +54,11 @@ export default {
     },
     ariaRoledescription: {
       type: String,
-      default: null
+      default: null,
+      validator: function(value) {
+        // Based on https://www.w3.org/TR/wai-aria-1.1/#aria-roledescription
+        return value.replace(/\s/g, "").length > 0;
+      }
     },
     disabled: {
       type: Boolean,
@@ -77,7 +82,9 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
+@import "../../stylesheets/shadows.less";
+
 .PButton {
   background-color: inherit;
   border: 1px solid #dedede;
@@ -112,18 +119,15 @@ export default {
 
 .PButton--elevated {
   transition: box-shadow 0.2s;
-  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-    0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  box-shadow: @box-shadow-01;
 
   &:hover,
   &:focus {
-    box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14),
-      0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2);
+    box-shadow: @box-shadow-02;
   }
 
   &:active {
-    box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-      0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+    box-shadow: @box-shadow-01;
   }
 }
 

@@ -1,13 +1,16 @@
 <template>
-  <div :class="pClass">
-    <button
-      id="accordionBtn"
-      class="AccordionBtn"
+  <div>
+    <PButton
+      id="pAccordionBtn"
+      class="PAccordionBtn"
       @click="expanded = !expanded"
+      @keydown="expanded = !expanded"
     >
-      <span>{{ label }}</span>
-      <span>{{ expanded ? "-" : "+" }}</span>
-    </button>
+      <template #content>
+        <span>{{ label }}</span>
+        <span>{{ expanded ? "-" : "+" }}</span>
+      </template>
+    </PButton>
     <transition name="expand" mode="out-in">
       <slot v-if="expanded" name="content"></slot>
     </transition>
@@ -15,14 +18,15 @@
 </template>
 
 <script>
+import PButton from "@/components/PButtons/PButton";
+
 export default {
-  name: "Accordion",
+  name: "PAccordion",
+  components: {
+    PButton
+  },
   props: {
     label: {
-      type: String,
-      default: null
-    },
-    pClass: {
       type: String,
       default: null
     },
@@ -35,12 +39,28 @@ export default {
     return {
       expanded: this.expand
     };
+  },
+  methods: {
+    handleKeyDown(event) {
+      if (
+        event &&
+        event.keyCode &&
+        !event.shiftKey &&
+        !event.ctrlKey &&
+        !event.altKey &&
+        !event.metaKey &&
+        (event.keyCode === 13 || event.keyCode === 32) // if enter or space is pressed
+      ) {
+        event.preventDefault();
+        this.expanded = !this.expanded;
+      }
+    }
   }
 };
 </script>
 
 <style lang="less" scoped>
-.AccordionBtn {
+.PAccordionBtn {
   width: 100%;
   text-align: left;
   padding: 1rem;
