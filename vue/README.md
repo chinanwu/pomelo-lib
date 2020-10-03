@@ -44,3 +44,5 @@ export default {
 - [Create a Vue.js component library](https://itnext.io/create-a-vue-js-component-library-as-a-module-part-1-a1116e632751)
 - [Vue Jest Testing Docs](https://vue-test-utils.vuejs.org/v2/guide/event-handling.html#the-counter-component)
 - Looking at other vue component libraries! (That's what you're doing *right now*! Way to go!)
+- [Vue Style Guide](https://vuejs.org/v2/style-guide/#Base-component-names-strongly-recommended)
+- [Vue Jest](https://medium.com/swlh/tips-on-unit-testing-vue-components-with-jest-e68ff6a28bb5)

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion.vue expands on click 1`] = `
+<div
+  class=""
+>
+  <button
+    class="AccordionBtn"
+    id="accordionBtn"
+  >
+    <span />
+    <span>
+      +
+    </span>
+  </button>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;
+
+exports[`Accordion.vue renders Accordion 1`] = `
+<div
+  class=""
+>
+  <button
+    class="AccordionBtn"
+    id="accordionBtn"
+  >
+    <span />
+    <span>
+      +
+    </span>
+  </button>
+  <transition-stub>
+    <!--v-if-->
+  </transition-stub>
+</div>
+`;
+
+exports[`Accordion.vue renders expanded accordion with label 1`] = `
+<div
+  class=""
+>
+  <button
+    class="AccordionBtn"
+    id="accordionBtn"
+  >
+    <span>
+      Accordion Label
+    </span>
+    <span>
+      -
+    </span>
+  </button>
+  <transition-stub>
+    
+    
+  </transition-stub>
+</div>
+`;
