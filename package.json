@@ -3,7 +3,7 @@
   "author": "Chin-An (Salmon) Wu",
   "description": "A Vue and React component library",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "publish": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
