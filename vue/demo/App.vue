@@ -2,7 +2,7 @@
   <h1>Pomelo Demo!</h1>
 
   <section id="card">
-    <h2>PCard:</h2>
+    <h2>PCard</h2>
 
     <PCard class="CustomCard">
       <template v-slot:front>
@@ -13,10 +13,10 @@
       </template>
     </PCard>
 
-    <PAccordion class="customAccordion" label="Details">
+    <PAccordion class="CustomAccordion" label="Details">
       <template #content>
-        <div class="codeContainer">
-          <h3 class="Code__label">Component code:</h3>
+        <div class="CodeContainer">
+          <h3 class="Code__label">Component example code:</h3>
           <pre class="Code">
 &lt;Card class="CustomCard"&gt;
   &lt;template v-slot:front&gt;
@@ -28,11 +28,9 @@
 &lt;/Card&gt;
           </pre>
 
-          <h3 class="Code__label">Styling:</h3>
+          <h3 class="Code__label">Styling applied to Demo above:</h3>
           <pre class="Code">
 .CustomCard {
-  width: 10rem;
-  height: 7rem;
   border: 1px solid black;
 }
           </pre>
@@ -56,7 +54,7 @@
       <div class="ButtonShowcase">
         <PButton @click="btnClicks += 1" @keydown="btnKeydowns += 1">
           <template #content>
-            I am a button
+            PButton
           </template>
         </PButton>
 
@@ -66,7 +64,7 @@
           @keydown="btnKeydowns += 1"
         >
           <template #content>
-            Can't click on me!
+            Disabled PButton
           </template>
         </PButton>
 
@@ -76,7 +74,7 @@
           @keydown="btnKeydowns += 1"
         >
           <template #content>
-            I'm an elevated button!
+            PButton--elevated
           </template>
         </PButton>
 
@@ -86,7 +84,7 @@
           @keydown="btnKeydowns += 1"
         >
           <template #content>
-            I've got a solid box shadow effect!
+            PButton--solid-box-shadow
           </template>
         </PButton>
 
@@ -96,7 +94,7 @@
           @keydown="btnKeydowns += 1"
         >
           <template #content>
-            I'm stealthy!
+            PButton--stealth
           </template>
         </PButton>
       </div>
@@ -157,6 +155,21 @@
       </PButton>
     </section>
 
+    <PAccordion class="CustomAccordion" label="Details">
+      <template #content>
+        <div class="CodeContainer">
+          <h3 class="Code__label">Component example code:</h3>
+          <pre class="Code">
+&lt;PButton @click="btnClicks += 1" @keydown="btnKeydowns += 1"&gt;
+  &lt;template #content&gt;
+    I am a button
+  &lt;/template&gt;
+&lt;/PButton&gt;
+          </pre>
+        </div>
+      </template>
+    </PAccordion>
+
     <p class="Note">
       Please note, when key down, the click is also triggered if the key is
       enter or space. This is expected.
@@ -166,27 +179,62 @@
   <section id="expandable">
     <h2>Expandable</h2>
 
-    <Expandable
-      p-class="customExpandable"
+    <PExpandable
+      closedClass="CustomExpandable"
       title="Name"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    />
-
-    <PAccordion
-      p-class="customAccordion"
-      label="This is the custom styling used:"
     >
       <template #content>
-        <pre class="Code">
-.customExpandable {
-  width: 30%;
+        <h3>Name</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+          culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </template>
+    </PExpandable>
+
+    <PAccordion class="CustomAccordion" label="Details">
+      <template #content>
+        <div class="CodeContainer">
+          <h3 class="Code__label">Component example code:</h3>
+          <pre class="Code">
+&lt;PExpandable
+    closedClass="CustomExpandable"
+    title="Name"
+    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+&gt;
+  &lt;template #content&gt;
+    &lt;h3>Name&lt;/h3&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+      minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+      aliquip ex ea commodo consequat. Duis aute irure dolor in
+      reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+      culpa qui officia deserunt mollit anim id est laborum.
+    &lt;/p&gt;
+  &lt;/template&gt;
+&lt;/PExpandable&gt;
+          </pre>
+
+          <h3 class="Code__label">Styling applied to Demo above:</h3>
+          <pre class="Code">
+::v-deep .CustomExpandable {
   background-color: #3c3c3c;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 1rem;
   color: white;
 }
-        </pre>
+          </pre>
+
+          <p class="Note">
+            Note: The use of the deep selector for the closedClass
+          </p>
+        </div>
       </template>
     </PAccordion>
   </section>
@@ -195,7 +243,7 @@
 <script>
 import PAccordion from "@/components/PAccordion/PAccordion";
 import PCard from "@/components/PCard/PCard";
-import Expandable from "@/components/WIP/Expandable";
+import PExpandable from "@/components/PExpandable/PExpandable";
 import PButton from "@/components/PButtons/PButton";
 import PLButton from "@/components/PButtons/PLButton";
 import PMButton from "@/components/PButtons/PMButton";
@@ -209,7 +257,7 @@ export default {
     PAccordion,
     PCard,
     // Dynoslot,
-    Expandable,
+    PExpandable,
     PButton,
     PLButton,
     PMButton,
@@ -224,7 +272,7 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -276,8 +324,10 @@ p {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+</style>
 
-.customAccordion {
+<style lang="less" scoped>
+.CustomAccordion {
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
@@ -285,12 +335,10 @@ p {
 }
 
 .CustomCard {
-  width: 10rem;
-  height: 7rem;
   border: 1px solid black;
 }
 
-.codeContainer {
+.CodeContainer {
   width: 80%;
 }
 
@@ -313,11 +361,16 @@ p {
 }
 
 .ButtonShowcase {
-  display: grid;
-  grid-gap: 0.5rem;
-  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
-  align-items: center;
-  justify-items: center;
+  //display: grid;
+  //grid-gap: 0.5rem;
+  //grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  //align-items: center;
+  //justify-items: center;
+  display: flex;
+}
+
+.ButtonShowcase > button {
+  margin: 1rem;
 }
 
 .CustomButton {
@@ -339,13 +392,9 @@ p {
   // TODO
 }
 
-.customExpandable {
-  width: 30%;
-  background-color: #3c3c3c;
-  padding: 1rem;
-  border-radius: 1rem;
-  margin: 1rem;
-  color: white;
+::v-deep .CustomExpandable {
+  //background-color: #3c3c3c;
+  //color: white;
 }
 </style>
 

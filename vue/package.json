@@ -1,6 +1,6 @@
 {
   "name": "pomelo-lib-vue",
-  "version": "0.0.2-beta-1",
+  "version": "0.0.2-beta.1",
   "private": false,
   "description": "Pomelo Vue Component Library",
   "main": "./dist/pomelo-lib.common.js",
@@ -18,10 +18,13 @@
   },
   "author": "Chin-An (Salmon) Wu",
   "license": "MIT",
-  "bugs": "github.com/chinanwu/pomelo-lib/issues",
+  "bugs": {
+    "url": "https://github.com/chinanwu/pomelo-lib"
+  },
   "keywords": [
     "Vue",
-    "components"
+    "components",
+    "pomelo"
   ],
   "scripts": {
     "serve": "vue-cli-service serve ./demo/main.js",

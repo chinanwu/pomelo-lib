@@ -91,7 +91,7 @@ export default {
   cursor: pointer;
   padding: 1rem;
   border-radius: 1rem;
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .PButton:disabled,

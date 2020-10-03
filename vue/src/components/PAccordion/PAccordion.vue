@@ -4,7 +4,7 @@
       id="pAccordionBtn"
       class="PAccordionBtn"
       @click="expanded = !expanded"
-      @keydown="expanded = !expanded"
+      @keydown="handleKeyDown"
     >
       <template #content>
         <span>{{ label }}</span>

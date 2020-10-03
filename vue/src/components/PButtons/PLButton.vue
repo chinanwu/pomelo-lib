@@ -19,6 +19,6 @@ export default {
 
 <style lang="less" scoped>
 .PLButton {
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 </style>

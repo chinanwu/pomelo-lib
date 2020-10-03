@@ -1,43 +1,50 @@
 import { mount, shallowMount } from "@vue/test-utils";
 
-import PAccordion from "@/components/PAccordion/PAccordion.vue";
-import PButton from "@/components/PButtons/PButton.vue";
+import PExpandable from "@/components/PExpandable/PExpandable";
+import PButton from "@/components/PButtons/PButton";
 
-describe("PAccordion", () => {
+describe("PExpandable", () => {
   describe("rendering", () => {
-    it("renders PAccordion", () => {
-      const wrapper = shallowMount(PAccordion);
+    it("renders PExpandable", () => {
+      const wrapper = shallowMount(PExpandable);
       expect(wrapper.element).toMatchSnapshot();
-      expect(wrapper.props().expand).toBe(false);
     });
 
-    it("renders expanded accordion with label", () => {
-      const wrapper = mount(PAccordion, {
+    it("renders all the props", () => {
+      const wrapper = shallowMount(PExpandable, {
         props: {
-          label: "Accordion Label",
+          title: "Title",
+          description: "Some words describing some things",
+          maxLength: 4,
+          expand: false,
+          closedClass: "FakeClass"
+        }
+      });
+      expect(wrapper.element).toMatchSnapshot();
+    });
+
+    it("renders expanded", () => {
+      const wrapper = mount(PExpandable, {
+        props: {
           expand: true
         },
         slots: {
-          content: "I am the innards of the accordion"
+          content: "<div>I am the content</div>"
         }
       });
       expect(wrapper.element).toMatchSnapshot();
     });
   });
 
-  describe("behaviour", () => {
-    it("expands on click", () => {
-      const wrapper = shallowMount(PAccordion, {
-        props: {
-          expand: false
-        }
-      });
+  describe("rendering", () => {
+    it("expands when clicked on", () => {
+      const wrapper = shallowMount(PExpandable);
       wrapper.findComponent(PButton).vm.$emit("click");
       expect(wrapper.vm.expanded).toEqual(true);
     });
 
-    it("closes on click", () => {
-      const wrapper = shallowMount(PAccordion, {
+    it("closes when clicked on", () => {
+      const wrapper = shallowMount(PExpandable, {
         props: {
           expand: true
         }
@@ -48,7 +55,7 @@ describe("PAccordion", () => {
 
     it("expands when enter is pressed", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(PAccordion);
+      const wrapper = shallowMount(PExpandable);
       wrapper.findComponent(PButton).vm.$emit("keydown", {
         preventDefault,
         keyCode: 13
@@ -59,7 +66,7 @@ describe("PAccordion", () => {
 
     it("closes when enter is pressed", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(PAccordion, {
+      const wrapper = shallowMount(PExpandable, {
         props: {
           expand: true
         }
@@ -74,7 +81,7 @@ describe("PAccordion", () => {
 
     it("expands when space is pressed", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(PAccordion);
+      const wrapper = shallowMount(PExpandable);
       wrapper.findComponent(PButton).vm.$emit("keydown", {
         preventDefault,
         keyCode: 32
@@ -85,7 +92,7 @@ describe("PAccordion", () => {
 
     it("closes when space is pressed", () => {
       const preventDefault = jest.fn();
-      const wrapper = shallowMount(PAccordion, {
+      const wrapper = shallowMount(PExpandable, {
         props: {
           expand: true
         }

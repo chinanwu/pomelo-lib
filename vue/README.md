@@ -61,3 +61,4 @@ The component's respective documentation are in their folder. Clicking on the co
 - [Jest shallowMount vs mount](https://reactgo.com/vue-testing-mount-vs-shallowmount/)
 - [Vue Test Utils shallowMount](https://vue-test-utils.vuejs.org/api/shallowmount.html)
 - [Vue Test Utils Common Tips](https://vue-test-utils.vuejs.org/guides/#common-tips)
+- [Style Scoped vs Globa](https://vue-loader.vuejs.org/guide/scoped-css.html#mixing-local-and-global-styles)
