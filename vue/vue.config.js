@@ -9,5 +9,6 @@ module.exports = {
       args[0].template = "./demo/public/index.html";
       return args;
     });
-  }
+  },
+  publicPath: ""
 };
