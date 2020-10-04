@@ -20,6 +20,9 @@ Alternatively, you can use the hyphenated component name.
 <p-button></p-button>
 ```
 
+## Slots
+- Takes in one (1) slot named content
+
 ### Props
 
 | Prop | Type |  Default | Description | Validation |
@@ -29,8 +32,8 @@ Alternatively, you can use the hyphenated component name.
 | ariaLabelledBy | String | null | Sets the aria-labelledby on the button | None |
 | role | String | null | Sets the role on the button | Must be one of "tab" or "link" |
 | ariaHasPopup | String | null | Sets the aria-haspopup on the button | Must be one of "menu", "listbox", "tree", "grid", "dialog", or "true" |
-| ariaRoledescription | String | null | Sets the aria-description on the button | Cannot be just whitespace characters |
-| disabled | Boolean | null | Sets the button as disabled or not | None |
+| ariaRoledescription | String | null | Sets the aria-description on the button | Cannot contain only whitespace characters |
+| disabled | Boolean | false | Sets the button as disabled or not | None |
 
 ### Available Styling
 

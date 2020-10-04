@@ -15,6 +15,9 @@ Alternatively, you can use the hyphenated component name.
 <p-accordion></p-accordion>
 ```
 
+## Slots
+- Takes in one (1) slot named content
+
 ## Props
 
 | Prop | Type |  Default | Description | Validation |

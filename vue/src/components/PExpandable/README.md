@@ -17,15 +17,18 @@ Alternatively, you can use the hyphenated component name.
 <p-expandable></p-expandable>
 ```
 
+## Slots
+- Takes in one (1) slot named "content"
+
 ## Props
 
 | Prop | Type |  Default | Description | Validation |
 | ---- | ---- | -------- | ----------- | ---------- |
-| title | String | Null | The label when minimized | None |
-| description | String | Null | The blurb that is presented when minimized | None |
+| title | String | null | The label when minimized | None |
+| description | String | null | The blurb that is presented when minimized | None |
 | maxLength | Number | 100 | Maximum length of blurb allowed | Must be greater than 3 |
 | expand | Boolean | false | Default expanded state of component | None |
-| closedClass | String | Null | Allows for inner styling of minimized component | None |
+| closedClass | String | null | Allows for inner styling of minimized component | None |
 
 ## Best practices
 

@@ -13,9 +13,6 @@ Alternatively, you can use the hyphenated component name.
 <component-name></component-name>
 ```
 
-## Slots
-- Takes in one (1) slot named
-
 ## Props
 
 | Prop | Type |  Default | Description | Validation |

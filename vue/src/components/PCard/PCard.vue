@@ -7,10 +7,10 @@
     @click="handleClick"
     @keydown="handleKeyDown"
   >
-    <div class="PCard__front">
+    <div class="PCard__front" :class="frontClass">
       <slot name="front"></slot>
     </div>
-    <div class="PCard__back">
+    <div class="PCard__back" :class="backClass">
       <slot name="back"></slot>
     </div>
   </div>
@@ -27,6 +27,14 @@ export default {
     flipped: {
       type: Boolean,
       default: false
+    },
+    frontClass: {
+      type: String,
+      default: null
+    },
+    backClass: {
+      type: String,
+      default: null
     }
   },
   data() {
