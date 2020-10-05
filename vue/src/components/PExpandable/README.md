@@ -2,7 +2,7 @@
 
 A component that expand to become a larger component.
 
-Click here to see a demo of these buttons in action. TODO: ADD LINK
+[Click here to see a demo of these buttons in action](https://chinanwu.github.io/pomelo-lib/vue/index.html#pexpandable)
 
 ## Example
 ```html
@@ -43,3 +43,5 @@ Alternatively, you can use the hyphenated component name.
 - Please create an issue [here](https://github.com/chinanwu/pomelo-lib/issues). Indicate the component and the issue, thank you! 
 - Alternatively, if you fix the issues, you can create a [pull request](https://github.com/chinanwu/pomelo-lib/pulls)! 
 
+## TODO
+- Prefer motion none accessibility

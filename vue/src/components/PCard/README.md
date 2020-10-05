@@ -2,6 +2,8 @@
 
 A flippable base card component.
 
+[Click here to see a demo of these buttons in action](https://chinanwu.github.io/pomelo-lib/vue/index.html#pcard)
+
 ## Example
 ```html
 <PCard>

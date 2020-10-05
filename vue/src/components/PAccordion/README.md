@@ -2,6 +2,8 @@
 
 A base accordion component PAccordion.
 
+[Click here to see a demo of these buttons in action](https://chinanwu.github.io/pomelo-lib/vue/index.html#paccordion)
+
 ## Example
 ```html
 <PAccordion>

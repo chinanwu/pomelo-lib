@@ -1,6 +1,6 @@
 {
   "name": "pomelo-lib-vue",
-  "version": "0.0.2-beta.1",
+  "version": "0.0.2-beta.3",
   "private": false,
   "description": "Pomelo Vue Component Library",
   "main": "./dist/pomelo-lib.common.js",
@@ -10,7 +10,8 @@
   "files": [
     "dist/*",
     "src/**/*.vue",
-    "src/**/*.less"
+    "src/**/*.less",
+    "src/functions/*.js"
   ],
   "repository": {
     "type": "git",
@@ -28,6 +29,7 @@
   ],
   "scripts": {
     "serve": "vue-cli-service serve ./demo/main.js",
+    "build": "vue-cli-service build",
     "build-demo": "rm -r dist && vue-cli-service build ./demo/main.js",
     "build-lib": "vue-cli-service build --target lib --name pomelo-lib src/main.js",
     "build-publish-lib": "npm run build-lib && npm publish",
@@ -36,6 +38,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "jest": "^24.9.0",
     "vue": "^3.0.0-0"
   },
   "devDependencies": {
@@ -53,7 +56,7 @@
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "prettier": "^1.19.1",
-    "typescript": "~3.9.3",
+    "typescript": "^4.0.3",
     "vue-jest": "^5.0.0-alpha.4"
   }
 }

@@ -4,5 +4,10 @@ module.exports = {
     "^.+\\.vue$": "vue-jest"
   },
   collectCoverage: true,
-  coveragePathIgnorePatterns: ["/node_modules/"]
+  moduleFileExtensions: ["js", "json", "vue"],
+  globals: {
+    "vue-jest": {
+      babelConfig: false
+    }
+  }
 };

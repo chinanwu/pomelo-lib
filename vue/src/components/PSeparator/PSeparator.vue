@@ -4,13 +4,7 @@
 
 <script>
 export default {
-  name: "PSeparator",
-  props: {
-    vertical: {
-      type: Boolean,
-      default: false
-    }
-  }
+  name: "PSeparator"
 };
 </script>
 

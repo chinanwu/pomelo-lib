@@ -518,6 +518,126 @@
           </template>
         </PAccordion>
       </section>
+      <div class="Components--middle">
+        <PSeparator class="CustomPSeparator" />
+      </div>
+      <section id="piconslidelabel">
+        <h2 class="Showcase__label">
+          <a class="Showcase__labelLink" href="#piconslidelabel" tabindex="0">
+            PIconSlideLabel
+          </a>
+        </h2>
+
+        <div class="IconShowcase">
+          <PIconSlideLabel
+            :icon-url="require('./assets/github.png')"
+            class="CustomIcon"
+            alt="Github Logo"
+            label="Github"
+            icon-class="CustomIcon__img"
+          />
+
+          <PIconSlideLabel
+            link="https://github.com/chinanwu/pomelo-lib"
+            link-title="Pomelo's Github Repo"
+            :icon-url="require('./assets/github.png')"
+            alt="Github Logo"
+            label="Github With a Link!"
+            icon-class="CustomIcon__img"
+          />
+        </div>
+
+        <h3>Component Code:</h3>
+        <PAccordion label="Show">
+          <template #content>
+            <pre class="Showcase__code">
+&lt;PIconSlideLabel
+    link="https://chinanwu.com"
+    link-title="Something about link"
+    :icon-url="require('path/relative/to/file.png')"
+    alt="Description of icon"
+    label="Label"
+/&gt;
+            </pre>
+          </template>
+        </PAccordion>
+
+        <h3>Props:</h3>
+        <PAccordion label="Show">
+          <template #content>
+            <PTable
+              :headers="[
+                'prop',
+                'type',
+                'default',
+                'required',
+                'description',
+                'validation'
+              ]"
+              :data="[
+                {
+                  prop: 'iconUrl',
+                  type: 'String',
+                  default: 'N/A',
+                  required: 'true',
+                  description:
+                    'The path to the icon img, relative to the component using it. Must be wrapped with `require()` to work.',
+                  validation: 'None'
+                },
+                {
+                  alt: 'alt',
+                  type: 'String',
+                  default: 'N/A',
+                  required: 'true',
+                  description: 'Description of the icon',
+                  validation: 'None'
+                },
+                {
+                  prop: 'label',
+                  type: 'String',
+                  default: 'N/A',
+                  required: 'true',
+                  description:
+                    'The label that slides out upon hovering over the icon',
+                  validation: 'None'
+                },
+                {
+                  prop: 'link',
+                  type: 'String',
+                  default: 'null',
+                  required: 'false',
+                  description: 'URL to go to when click on icon',
+                  validation: 'None'
+                },
+                {
+                  prop: 'linkTitle',
+                  type: 'String',
+                  default: 'null',
+                  required: 'false',
+                  description: 'A title for the link',
+                  validation: 'None'
+                },
+                {
+                  prop: 'iconWidth',
+                  type: 'Number',
+                  default: '32',
+                  required: 'false',
+                  description: 'The icon\'s width in px',
+                  validation: 'None'
+                },
+                {
+                  prop: 'iconHeight',
+                  type: 'Number',
+                  default: '32',
+                  required: 'false',
+                  description: 'The icon\'s height in px',
+                  validation: 'None'
+                }
+              ]"
+            />
+          </template>
+        </PAccordion>
+      </section>
     </div>
   </div>
 </template>
@@ -530,6 +650,7 @@ import PMButton from "@/components/PButtons/PMButton";
 import PSButton from "@/components/PButtons/PSButton";
 import PCard from "@/components/PCard/PCard";
 import PExpandable from "@/components/PExpandable/PExpandable";
+import PIconSlideLabel from "@/components/PIconSlideLabel/PIconSlideLabel";
 import PSeparator from "@/components/PSeparator/PSeparator";
 import PTable from "@/components/PTable/PTable";
 
@@ -543,6 +664,7 @@ export default {
     PSButton,
     PCard,
     PExpandable,
+    PIconSlideLabel,
     PSeparator,
     PTable
   },
@@ -551,7 +673,13 @@ export default {
       dark: false,
       btnClicks: 0,
       btnKeydowns: 0,
-      availableComponents: ["PAccordion", "PButton", "PCard", "PExpandable"],
+      availableComponents: [
+        "PAccordion",
+        "PButton",
+        "PCard",
+        "PExpandable",
+        "PIconSlideLabel"
+      ],
       pButtonStyles: ["elevated", "solid-box-shadow", "stealth"]
     };
   }
@@ -794,8 +922,21 @@ p {
   border: 1px solid @grey-06;
 }
 
-::v-deep .CustomCard__side {
+::v-deep(.CustomCard__side) {
   display: flex;
   justify-content: center;
+}
+
+.IconShowcase {
+  display: flex;
+  justify-content: space-around;
+}
+
+.CustomIcon {
+  margin-left: 1rem;
+}
+
+::v-deep(.CustomIcon__img) {
+  height: 32px;
 }
 </style>

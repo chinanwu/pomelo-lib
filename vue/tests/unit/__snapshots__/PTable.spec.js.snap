@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PTable rendering renders PTable 1`] = `
+<table>
+  <thead>
+    <tr>
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+  </tbody>
+</table>
+`;

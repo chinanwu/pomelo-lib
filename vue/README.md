@@ -7,7 +7,7 @@ A library of components that I used a lot. I made this for me, but it could also
 - Run `npm i -S pomelo-lib-vue` within your project
 - Go to the component you want to use a pomelo component in, and import the component you want to use!
 ```
-import Button from 'pomelo-lib-vue'
+import { Button } from 'pomelo-lib-vue'
 
 export default {
     name: "YourComponent",
@@ -47,6 +47,7 @@ The component's respective documentation are in their folder. Clicking on the co
 - Add docs for components
 - A better (more aesthetic) demo!
 - A better lib README! See [here](https://github.com/frederikwagner/vue-component-library) for a good example
+- Add `required` field to props docs
 
 ## RIUTFOHTDT (oJGGR)
 

@@ -2,7 +2,7 @@
 
 A collection of base button components made with accessibility in mind.
 
-Click here to see a demo of these buttons in action. TODO: ADD LINK
+[Click here to see a demo of these buttons in action](https://chinanwu.github.io/pomelo-lib/vue/index.html#pbutton)
 
 ## PButton
 This is the base button component.

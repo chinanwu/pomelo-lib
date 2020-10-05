@@ -2,7 +2,7 @@
 
 A component that...
 
-Click here to see a demo of these buttons in action. TODO: ADD LINK
+[Click here to see a demo of these buttons in action](https://chinanwu.github.io/pomelo-lib/vue/index.html#)
 
 ## Example
 ```html
@@ -18,13 +18,13 @@ Alternatively, you can use the hyphenated component name.
 
 ## Props
 
-| Prop | Type |  Default | Description | Validation |
-| ---- | ---- | -------- | ----------- | ---------- |
-| prop | String | Null | Some description | None |
+| Prop | Type |  Default | Required | Description | Validation |
+| ---- | ---- | -------- | -------- | ----------- | ---------- |
+| prop | String | null | false | Some description | None |
 
 ## Best practices
 
-A BaseAvatar should ...
+A ComponentName should ...
 
 ## Related components
 
