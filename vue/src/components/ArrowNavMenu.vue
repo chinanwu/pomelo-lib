@@ -23,6 +23,8 @@
 </template>
 
 <script>
+// TODO: role menu vs menubar - Dynamic setting via window size maybe?
+
 export default {
   name: "ArrowNavMenu",
   props: {
@@ -139,11 +141,19 @@ export default {
 
 .ArrowNavMenu__item {
   color: black;
-
   border: none;
   background-color: inherit;
   font-size: 3.6rem;
   margin: 1rem;
+  cursor: pointer;
+
+  // TODO Figure this out
+  //transition: all 0.2s;
+  //
+  //&:focus,
+  //&:hover {
+  //  text-decoration: underline;
+  //}
 }
 
 .ArrowNavMenu__item--selected {

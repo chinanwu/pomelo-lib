@@ -1,5 +1,5 @@
 <template>
-  <div role="navigation" aria-labelledby="toc">
+  <nav aria-labelledby="toc">
     <h2 id="toc">TABLE OF CONTENTS</h2>
     <ol>
       <li v-for="(content, index) in contents" :key="'tOC-' + index">
@@ -8,7 +8,7 @@
         </strong>
       </li>
     </ol>
-  </div>
+  </nav>
 </template>
 
 <script>

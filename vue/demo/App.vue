@@ -640,12 +640,15 @@
       </section>
 
       <ArrowNavMenu :items="['Test', 'Here', 'Once', 'There']" active="Test" />
+
+      <ArrowSelector :default="1" :total="4" />
     </div>
   </div>
 </template>
 
 <script>
 import ArrowNavMenu from "@/components/ArrowNavMenu";
+import ArrowSelector from "@/components/ArrowSelector";
 import PAccordion from "@/components/PAccordion/PAccordion";
 import PButton from "@/components/PButtons/PButton";
 import PLButton from "@/components/PButtons/PLButton";
@@ -660,6 +663,7 @@ import PTable from "@/components/PTable/PTable";
 export default {
   name: "App",
   components: {
+    ArrowSelector,
     ArrowNavMenu,
     PAccordion,
     PButton,
