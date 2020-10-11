@@ -638,11 +638,14 @@
           </template>
         </PAccordion>
       </section>
+
+      <ArrowNavMenu :items="['Test', 'Here', 'Once', 'There']" active="Test" />
     </div>
   </div>
 </template>
 
 <script>
+import ArrowNavMenu from "@/components/ArrowNavMenu";
 import PAccordion from "@/components/PAccordion/PAccordion";
 import PButton from "@/components/PButtons/PButton";
 import PLButton from "@/components/PButtons/PLButton";
@@ -657,6 +660,7 @@ import PTable from "@/components/PTable/PTable";
 export default {
   name: "App",
   components: {
+    ArrowNavMenu,
     PAccordion,
     PButton,
     PLButton,

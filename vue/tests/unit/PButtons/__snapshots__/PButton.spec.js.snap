@@ -10,6 +10,16 @@ exports[`PButton behaviour emits click 1`] = `
 </button>
 `;
 
+exports[`PButton behaviour emits double click 1`] = `
+<button
+  class="PButton"
+  id="test"
+>
+  
+  
+</button>
+`;
+
 exports[`PButton behaviour emits keydown 1`] = `
 <button
   class="PButton"

@@ -42,6 +42,17 @@ describe("PButton", () => {
       expect(wrapper.emitted()).toHaveProperty("click");
     });
 
+    it("emits double click", () => {
+      const wrapper = shallowMount(PButton, {
+        props: {
+          id: "test"
+        }
+      });
+      expect(wrapper.element).toMatchSnapshot();
+      wrapper.find("#test").trigger("dblclick");
+      expect(wrapper.emitted()).toHaveProperty("dblclick");
+    });
+
     it("emits keydown", () => {
       const wrapper = shallowMount(PButton, {
         props: {

@@ -10,6 +10,7 @@
     :disabled="disabled"
     @click="handleClick"
     @keydown="handleKeyDown"
+    @dblclick="handleDblClick"
   >
     <slot name="content"></slot>
   </button>
@@ -70,10 +71,13 @@ export default {
       return "PButton " + this.cClass;
     }
   },
-  emits: ["click", "keydown"],
+  emits: ["click", "keydown", "dblclick"],
   methods: {
     handleClick() {
       this.$emit("click");
+    },
+    handleDblClick() {
+      this.$emit("dblclick");
     },
     handleKeyDown() {
       this.$emit("keydown");
