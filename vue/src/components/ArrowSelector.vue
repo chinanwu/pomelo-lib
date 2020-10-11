@@ -1,9 +1,23 @@
 <template>
   <div class="ArrowSelector">
     <div class="ArrowSelector__main">
-      <button class="ArrowSelector__btn" @click="handleLeftArrow">&lt;</button>
+      <button
+        id="arrowSelectorLeft"
+        class="ArrowSelector__btn"
+        @click="handleLeftArrow"
+        @keydown="handleLeftArrowKeyDown"
+      >
+        &lt;
+      </button>
       <span>{{ current }} / {{ total }}</span>
-      <button class="ArrowSelector__btn" @click="handleRightArrow">&gt;</button>
+      <button
+        id="arrowSelectorRight"
+        class="ArrowSelector__btn"
+        @click="handleRightArrow"
+        @keydown="handleRightArrowKeyDown"
+      >
+        &gt;
+      </button>
     </div>
     <div class="ArrowSelector__label">Current</div>
   </div>
@@ -15,7 +29,8 @@ export default {
   props: {
     default: {
       type: Number,
-      required: true
+      required: true,
+      validator: value => value > 0
     },
     total: {
       type: Number,
@@ -28,15 +43,45 @@ export default {
     };
   },
   methods: {
+    setCurrent(next) {
+      this.current = next;
+      this.$emit("change", next);
+    },
     handleLeftArrow() {
-      const nextCurrent = this.current - 1 <= 0 ? this.total : this.current - 1;
-      this.current = nextCurrent;
-      this.$emit("change", nextCurrent);
+      this.setCurrent(this.current - 1 <= 0 ? this.total : this.current - 1);
     },
     handleRightArrow() {
-      const nextCurrent = this.current + 1 > this.total ? 1 : this.current + 1;
-      this.current = nextCurrent;
-      this.$emit("change", nextCurrent);
+      this.setCurrent(this.current + 1 > this.total ? 1 : this.current + 1);
+    },
+    handleLeftArrowKeyDown(event) {
+      if (
+        event &&
+        !event.shiftKey &&
+        !event.ctrlKey &&
+        !event.altKey &&
+        !event.metaKey &&
+        event.key
+      ) {
+        if (event.key === "Enter" || event.key === "Space") {
+          event.preventDefault();
+          this.handleLeftArrow();
+        }
+      }
+    },
+    handleRightArrowKeyDown(event) {
+      if (
+        event &&
+        !event.shiftKey &&
+        !event.ctrlKey &&
+        !event.altKey &&
+        !event.metaKey &&
+        event.key
+      ) {
+        if (event.key === "Enter" || event.key === "Space") {
+          event.preventDefault();
+          this.handleRightArrow();
+        }
+      }
     }
   },
   emits: ["change"]
@@ -63,10 +108,45 @@ export default {
   border: none;
   font-size: 7.2rem;
   cursor: pointer;
+  color: #c8c8c8;
 }
 
 .ArrowSelector__label {
   font-size: 2.4rem;
   color: #4f4f4f;
+
+  &::after {
+    content: " Project";
+  }
+}
+
+// iPhone 11 Pro Max, iPhone 8
+@media only screen and (max-width: 414px) {
+  .ArrowSelector__main {
+    font-size: 3.6rem;
+  }
+
+  .ArrowSelector__btn {
+    font-size: 4.8rem;
+  }
+
+  .ArrowSelector__label::after {
+    content: "";
+  }
+}
+
+// iPhone SE
+@media only screen and (max-width: 320px) {
+  .ArrowSelector__main {
+    font-size: 2.4rem;
+  }
+
+  .ArrowSelector__btn {
+    font-size: 4.8rem;
+  }
+
+  .ArrowSelector__label {
+    font-size: 1.8rem;
+  }
 }
 </style>

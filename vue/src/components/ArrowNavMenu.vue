@@ -11,6 +11,7 @@
       :id="'aNM-' + index + '-' + item"
     >
       <button
+        :id="'aNM-btn-' + index"
         class="ArrowNavMenu__item"
         :class="{ 'ArrowNavMenu__item--selected': selected === index }"
         @click="handleClick(index)"
@@ -52,14 +53,16 @@ export default {
     }
   },
   methods: {
-    handleClick(i) {
+    setSelected(i) {
       this.$emit("selected", this.items[i]);
       this.selected = i;
+    },
+    handleClick(i) {
+      this.setSelected(i);
     },
     handleKeyDown(event) {
       if (
         event &&
-        event.target &&
         !event.shiftKey &&
         !event.ctrlKey &&
         !event.altKey &&
@@ -69,30 +72,20 @@ export default {
         // https://www.w3.org/TR/wai-aria-practices/examples/menu-button/menu-button-actions-active-descendant.html
         if (event.key === "ArrowDown" || event.key === "ArrowRight") {
           event.preventDefault();
-          if (this.selected === this.items.length - 1) {
-            this.$emit("selected", this.items[0]);
-            this.selected = 0;
-          } else {
-            this.$emit("selected", this.items[this.selected + 1]);
-            this.selected += 1;
-          }
+          this.selected === this.items.length - 1
+            ? this.setSelected(0)
+            : this.setSelected(this.selected + 1);
         } else if (event.key === "ArrowUp" || event.key === "ArrowLeft") {
           event.preventDefault();
-          if (this.selected === 0) {
-            this.$emit("selected", this.items[this.items.length - 1]);
-            this.selected = this.items.length - 1;
-          } else {
-            this.$emit("selected", this.items[this.selected - 1]);
-            this.selected -= 1;
-          }
+          this.selected === 0
+            ? this.setSelected(this.items.length - 1)
+            : this.setSelected(this.selected - 1);
         } else if (event.key === "Home") {
           event.preventDefault();
-          this.$emit("selected", this.items[0]);
-          this.selected = 0;
+          this.setSelected(0);
         } else if (event.key === "End") {
           event.preventDefault();
-          this.$emit("selected", this.items[this.items.length - 1]);
-          this.selected = this.items.length - 1;
+          this.setSelected(this.items.length - 1);
         } else {
           if (/^[a-zA-Z]$/.test(event.key)) {
             // Note from Salmon: This is seriously so cool y'all!
@@ -100,22 +93,25 @@ export default {
               // Start at one so it doesn't count itself as an option to jump to
               const temp = this.selected + i;
               if (temp >= this.items.length) {
+                const firstLetter = this.items[temp % this.items.length].charAt(
+                  0
+                );
                 if (
-                  this.items[temp % this.selected].charAt(0) === event.key ||
-                  this.items[temp % this.selected].charAt(0) ===
-                    event.key.toUpperCase()
+                  firstLetter === event.key ||
+                  firstLetter === event.key.toLowerCase() ||
+                  firstLetter === event.key.toUpperCase()
                 ) {
-                  this.$emit("selected", this.items[temp % this.selected]);
-                  this.selected = temp % this.selected;
+                  this.setSelected(temp % this.items.length);
                   return;
                 }
               } else {
+                const firstLetter = this.items[temp].charAt(0);
                 if (
-                  this.items[temp].charAt(0) === event.key ||
-                  this.items[temp].charAt(0) === event.key.toUpperCase()
+                  firstLetter === event.key ||
+                  firstLetter === event.key.toLowerCase() ||
+                  firstLetter === event.key.toUpperCase()
                 ) {
-                  this.$emit("selected", this.items[temp]);
-                  this.selected = temp;
+                  this.setSelected(temp);
                   return;
                 }
               }
@@ -146,14 +142,12 @@ export default {
   font-size: 3.6rem;
   margin: 1rem;
   cursor: pointer;
+  transition: all 0.2s;
 
-  // TODO Figure this out
-  //transition: all 0.2s;
-  //
-  //&:focus,
-  //&:hover {
-  //  text-decoration: underline;
-  //}
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .ArrowNavMenu__item--selected {
@@ -165,6 +159,7 @@ export default {
     display: inline-block;
     animation: fadeIn 0.3s;
     padding: 0 1rem;
+    border: none;
   }
 }
 
@@ -182,6 +177,31 @@ export default {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+// iPad Pro 11"
+@media only screen and (max-width: 834px) {
+  .ArrowNavMenu__item {
+    font-size: 2.4rem;
+  }
+}
+
+// iPhone 11 Pro Max, iPhone 8
+@media only screen and (max-width: 414px) {
+  .ArrowNavMenu {
+    flex-direction: column;
+  }
+
+  .ArrowNavMenu__item {
+    font-size: 3.6rem;
+  }
+}
+
+// iPhone SE
+@media only screen and (max-width: 320px) {
+  .ArrowNavMenu__item {
+    font-size: 2.4rem;
   }
 }
 </style>
