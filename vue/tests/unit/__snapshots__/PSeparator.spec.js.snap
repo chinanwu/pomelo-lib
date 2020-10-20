@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`PSeparator rendering renders PSeparator 1`] = `
-<div
-  class="PSeparator"
-  role="presentation"
-/>
-`;
